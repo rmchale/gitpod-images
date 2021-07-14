@@ -11,3 +11,15 @@ RUN sudo apt-get update && sudo apt-get install terraform
 RUN brew install fd
 RUN brew install fzf
 RUN brew install ripgrep
+
+# install google-cloud-sdk
+ARG GCS_DIR=/opt/google-cloud-sdk
+ENV PATH=$GCS_DIR/bin:$PATH
+RUN sudo chown gitpod: /opt \
+    && mkdir $GCS_DIR \
+    && curl -fsSL https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-344.0.0-linux-x86_64.tar.gz \
+    | tar -xzvC /opt \
+    && /opt/google-cloud-sdk/install.sh --quiet --usage-reporting=false --bash-completion=true \
+    --additional-components docker-credential-gcr alpha beta \
+    # needed for access to our private registries
+    && docker-credential-gcr configure-docker
