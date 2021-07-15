@@ -6,6 +6,4 @@ RUN sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com
 RUN sudo apt-get update && sudo apt-get install terraform
 
 # install dev tools
-RUN brew install fd
-RUN brew install fzf
-RUN brew install ripgrep
+RUN apt-get install fzf
