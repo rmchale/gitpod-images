@@ -20,6 +20,7 @@ RUN printf "2\nY\n3\n" | projector install --no-auto-run
 RUN brew install fd
 RUN brew install fzf
 RUN brew install ripgrep
+RUN brew install micronaut
 
 RUN echo "alias intellij="~/.projector/configs/IntelliJ/run.sh $GITPOD_REPO_ROOT" >> /home/gitpod/.bashrc
 
