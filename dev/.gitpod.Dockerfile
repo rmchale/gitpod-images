@@ -21,6 +21,8 @@ RUN brew install fd
 RUN brew install fzf
 RUN brew install ripgrep
 
+RUN echo "alias intellij="~/.projector/configs/IntelliJ/run.sh $GITPOD_REPO_ROOT" >> /home/gitpod/.bashrc
+
 # install google-cloud-sdk
 ARG GCS_DIR=/opt/google-cloud-sdk
 ENV PATH=$GCS_DIR/bin:$PATH
