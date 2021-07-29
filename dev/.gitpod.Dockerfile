@@ -35,3 +35,6 @@ RUN sudo chown gitpod: /opt \
     --additional-components docker-credential-gcr alpha beta \
     # needed for access to our private registries
     && docker-credential-gcr configure-docker
+
+# install SDK man
+RUN curl -s "https://get.sdkman.io" | bash
