@@ -25,6 +25,9 @@ RUN mkdir -p ~/.projector/configs  # Prevents projector install from asking for 
 # RUN projector ide install 'IntelliJ IDEA Ultimate 2020.3.2' --no-auto-run
 RUN printf "2\nY\n3\n" | projector install --no-auto-run
 
+# install SERVERLESS
+RUN curl -o- -L https://slss.io/install | bash
+
 # install SDK man
 RUN curl -s "https://get.sdkman.io" | bash
 RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk selfupdate
