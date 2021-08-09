@@ -14,6 +14,9 @@ RUN brew install fzf
 RUN brew install ripgrep
 RUN brew install micronaut
 
+# install jupyter
+RUN brew install jupyterlab
+
 RUN echo "alias intellij='~/.projector/configs/IntelliJ/run.sh $GITPOD_REPO_ROOT'" >> /home/gitpod/.bashrc
 
 # Install required libraries for Projector + PhpStorm
