@@ -4,3 +4,4 @@ image:
 vscode:
   extensions:
     - golang.go
+    - humao.rest-client
