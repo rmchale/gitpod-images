@@ -7,3 +7,4 @@ vscode:
     - humao.rest-client
     - redhat.java
     - vscjava.vscode-maven
+    - vscjava.vscode-java-test
