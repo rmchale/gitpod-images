@@ -5,3 +5,5 @@ vscode:
   extensions:
     - golang.go
     - humao.rest-client
+    - redhat.java
+    - vscjava.vscode-maven
