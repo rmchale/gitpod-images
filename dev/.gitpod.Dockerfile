@@ -16,6 +16,9 @@ RUN brew install micronaut
 
 RUN pip3 install pipreqs
 
+# upgrade aws-cli
+RUN pip3 install awscli --upgrade
+
 # install jupyter
 RUN brew install jupyterlab
 
