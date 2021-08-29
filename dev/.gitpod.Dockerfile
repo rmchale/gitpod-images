@@ -14,6 +14,8 @@ RUN brew install fzf
 RUN brew install ripgrep
 RUN brew install micronaut
 
+RUN pip3 install pipreqs
+
 # install jupyter
 RUN brew install jupyterlab
 
