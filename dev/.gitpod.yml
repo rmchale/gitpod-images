@@ -4,6 +4,7 @@ image:
 vscode:
   extensions:
     - golang.go
+    - hashicorp.terraform
     - humao.rest-client
     - redhat.java
     - vscjava.vscode-maven
