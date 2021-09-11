@@ -6,4 +6,4 @@ RUN sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com
 RUN sudo apt-get update && sudo apt-get install terraform
 
 # install dev tools
-RUN apt-get install fzf
+RUN sudo apt-get install fzf
