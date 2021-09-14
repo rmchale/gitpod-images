@@ -24,7 +24,7 @@ RUN pip3 install awscli --upgrade
 RUN brew install jupyterlab
 
 RUN echo "alias intellij='~/.projector/configs/IntelliJ/run.sh $GITPOD_REPO_ROOT'" >> /home/gitpod/.bashrc
-RUN echo "eval \"$(direnv hook bash)\"" >> /home/gitpod/.bashrc
+RUN echo "eval \"\$(direnv hook bash)\"" >> /home/gitpod/.bashrc
 
 # Install required libraries for Projector + PhpStorm
 RUN sudo apt-get -qq install -y python3 python3-pip libxext6 libxrender1 libxtst6 libfreetype6 libxi6
