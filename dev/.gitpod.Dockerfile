@@ -41,5 +41,5 @@ RUN curl -o- -L https://slss.io/install | bash
 # install SDK man
 RUN curl -s "https://get.sdkman.io" | bash
 RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk selfupdate
-RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install micronaut 3.0.0-M5
+RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install micronaut 3.0.1
 RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install java 16.0.2-zulu
