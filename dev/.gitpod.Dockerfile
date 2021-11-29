@@ -1,5 +1,6 @@
 #FROM eu.gcr.io/gitpod-core-dev/dev/dev-environment@sha256:659e304e80ed9d583908a8cecdf1e502ad77a6bfa0c772308d5973feaf9fc071
-FROM eu.gcr.io/gitpod-core-dev/dev/dev-environment:0.10.0
+#FROM eu.gcr.io/gitpod-core-dev/dev/dev-environment:0.10.0
+FROM eu.gcr.io/gitpod-core-dev/dev/dev-environment:main.1888
 SHELL ["/bin/zsh", "-c"]
 
 # install terraform
