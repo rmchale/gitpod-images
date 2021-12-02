@@ -15,6 +15,7 @@ RUN brew install fzf
 RUN brew install ripgrep
 RUN brew install micronaut
 RUN brew install direnv
+RUN brew install glab
 
 RUN pip3 install pipreqs
 
