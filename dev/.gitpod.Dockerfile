@@ -13,7 +13,7 @@ RUN sudo apt-get update && sudo apt-get install terraform
 RUN brew install fd
 RUN brew install fzf
 RUN brew install ripgrep
-RUN brew install micronaut
+# RUN brew install micronaut
 RUN brew install direnv
 RUN brew install glab
 
