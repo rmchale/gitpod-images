@@ -1,7 +1,8 @@
 #FROM eu.gcr.io/gitpod-core-dev/dev/dev-environment@sha256:659e304e80ed9d583908a8cecdf1e502ad77a6bfa0c772308d5973feaf9fc071
 #FROM eu.gcr.io/gitpod-core-dev/dev/dev-environment:0.10.0
-FROM eu.gcr.io/gitpod-core-dev/dev/dev-environment:main.3465
+#FROM eu.gcr.io/gitpod-core-dev/dev/dev-environment:main.3465
 #FROM eu.gcr.io/gitpod-core-dev/dev/dev-environment:main.1888
+FROM gitpod/workspace-full:latest
 SHELL ["/bin/zsh", "-c"]
 
 # install terraform
@@ -18,20 +19,27 @@ RUN brew install ripgrep
 # RUN brew install micronaut
 RUN brew install direnv
 RUN brew install glab
-
+RUN pip3 install poetry
 RUN pip3 install pipreqs
+RUN pip3 install keyring
+RUN pip3 install keyrings.google-artifactregistry-auth
+RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
+    echo "deb https://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" > /etc/apt/sources.list.d/google-cloud-sdk.list && \
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
+    apt-get update && \
+    apt-get install -y google-cloud-sdk
 
 # upgrade aws-cli
-RUN pip3 install awscli --upgrade
+# RUN pip3 install awscli --upgrade
 
 # install jupyter
 # RUN brew install jupyterlab
 
 # RUN echo "alias intellij='~/.projector/configs/IntelliJ/run.sh $GITPOD_REPO_ROOT'" >> /home/gitpod/.bashrc
-RUN echo "eval \"\$(direnv hook bash)\"" >> /home/gitpod/.bashrc
+#RUN echo "eval \"\$(direnv hook bash)\"" >> /home/gitpod/.bashrc
 
 # Install required libraries for Projector + PhpStorm
-RUN sudo apt-get -qq install -y python3 python3-pip libxext6 libxrender1 libxtst6 libfreetype6 libxi6
+#RUN sudo apt-get -qq install -y python3 python3-pip libxext6 libxrender1 libxtst6 libfreetype6 libxi6
 # Install Projector
 # RUN pip3 install projector-installer
 # Install IDEA
